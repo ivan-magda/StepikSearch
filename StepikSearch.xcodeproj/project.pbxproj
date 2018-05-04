@@ -77,12 +77,9 @@
 		7537BA2B209C6CF200FEFDFE /* StepikSearch */ = {
 			isa = PBXGroup;
 			children = (
-				7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */,
-				7537BA2E209C6CF200FEFDFE /* ViewController.swift */,
-				7537BA30209C6CF200FEFDFE /* Main.storyboard */,
-				7537BA33209C6CF400FEFDFE /* Assets.xcassets */,
-				7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */,
-				7537BA38209C6CF400FEFDFE /* Info.plist */,
+				7537BA4E209C6F0A00FEFDFE /* Sources */,
+				7537BA4F209C6F1100FEFDFE /* Resources */,
+				7537BA57209C73A400FEFDFE /* Supporting Files */,
 			);
 			path = StepikSearch;
 			sourceTree = "<group>";
@@ -96,6 +93,73 @@
 			path = StepikSearchTests;
 			sourceTree = "<group>";
 		};
+		7537BA4E209C6F0A00FEFDFE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA54209C719000FEFDFE /* ApplicationLayer */,
+				7537BA56209C71C900FEFDFE /* PresentationLayer */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7537BA4F209C6F1100FEFDFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA52209C6FF500FEFDFE /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7537BA52209C6FF500FEFDFE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA33209C6CF400FEFDFE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7537BA53209C710400FEFDFE /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA2E209C6CF200FEFDFE /* ViewController.swift */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		7537BA54209C719000FEFDFE /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA55209C719F00FEFDFE /* AppDelegate */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		7537BA55209C719F00FEFDFE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7537BA56209C71C900FEFDFE /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA53209C710400FEFDFE /* UserStories */,
+				7537BA30209C6CF200FEFDFE /* Main.storyboard */,
+				7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		7537BA57209C73A400FEFDFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA38209C6CF400FEFDFE /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +169,8 @@
 			buildPhases = (
 				7537BA25209C6CF200FEFDFE /* Sources */,
 				7537BA26209C6CF200FEFDFE /* Frameworks */,
+				7537BA4C209C6DC800FEFDFE /* Increment Build number */,
+				7537BA4D209C6E1100FEFDFE /* Increment Short bundle version */,
 				7537BA27209C6CF200FEFDFE /* Resources */,
 			);
 			buildRules = (
@@ -191,6 +257,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7537BA4C209C6DC800FEFDFE /* Increment Build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"";
+		};
+		7537BA4D209C6E1100FEFDFE /* Increment Short bundle version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Short bundle version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "VERSIONNUM=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nNEWSUBVERSION=`echo $VERSIONNUM | awk -F \".\" '{print $3}'`\nNEWSUBVERSION=$(($NEWSUBVERSION + 1))\nNEWVERSIONSTRING=`echo $VERSIONNUM | awk -F \".\" '{print $1 \".\" $2 \".'$NEWSUBVERSION'\" }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $NEWVERSIONSTRING\" \"${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7537BA25209C6CF200FEFDFE /* Sources */ = {
@@ -360,7 +457,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
-				INFOPLIST_FILE = StepikSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/StepikSearch/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +476,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
-				INFOPLIST_FILE = StepikSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/StepikSearch/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
