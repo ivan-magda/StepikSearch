@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */; };
+		7537BA2F209C6CF200FEFDFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA2E209C6CF200FEFDFE /* ViewController.swift */; };
+		7537BA32209C6CF200FEFDFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA30209C6CF200FEFDFE /* Main.storyboard */; };
+		7537BA34209C6CF400FEFDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA33209C6CF400FEFDFE /* Assets.xcassets */; };
+		7537BA37209C6CF400FEFDFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */; };
+		7537BA42209C6CF400FEFDFE /* StepikSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7537BA3E209C6CF400FEFDFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7537BA21209C6CF200FEFDFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7537BA28209C6CF200FEFDFE;
+			remoteInfo = StepikSearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7537BA29209C6CF200FEFDFE /* StepikSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepikSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7537BA2E209C6CF200FEFDFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7537BA31209C6CF200FEFDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7537BA33209C6CF400FEFDFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7537BA36209C6CF400FEFDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7537BA38209C6CF400FEFDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7537BA3D209C6CF400FEFDFE /* StepikSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikSearchTests.swift; sourceTree = "<group>"; };
+		7537BA43209C6CF400FEFDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7537BA26209C6CF200FEFDFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7537BA3A209C6CF400FEFDFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7537BA20209C6CF200FEFDFE = {
+			isa = PBXGroup;
+			children = (
+				7537BA2B209C6CF200FEFDFE /* StepikSearch */,
+				7537BA40209C6CF400FEFDFE /* StepikSearchTests */,
+				7537BA2A209C6CF200FEFDFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7537BA2A209C6CF200FEFDFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA29209C6CF200FEFDFE /* StepikSearch.app */,
+				7537BA3D209C6CF400FEFDFE /* StepikSearchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7537BA2B209C6CF200FEFDFE /* StepikSearch */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */,
+				7537BA2E209C6CF200FEFDFE /* ViewController.swift */,
+				7537BA30209C6CF200FEFDFE /* Main.storyboard */,
+				7537BA33209C6CF400FEFDFE /* Assets.xcassets */,
+				7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */,
+				7537BA38209C6CF400FEFDFE /* Info.plist */,
+			);
+			path = StepikSearch;
+			sourceTree = "<group>";
+		};
+		7537BA40209C6CF400FEFDFE /* StepikSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */,
+				7537BA43209C6CF400FEFDFE /* Info.plist */,
+			);
+			path = StepikSearchTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7537BA28209C6CF200FEFDFE /* StepikSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7537BA46209C6CF400FEFDFE /* Build configuration list for PBXNativeTarget "StepikSearch" */;
+			buildPhases = (
+				7537BA25209C6CF200FEFDFE /* Sources */,
+				7537BA26209C6CF200FEFDFE /* Frameworks */,
+				7537BA27209C6CF200FEFDFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepikSearch;
+			productName = StepikSearch;
+			productReference = 7537BA29209C6CF200FEFDFE /* StepikSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7537BA3C209C6CF400FEFDFE /* StepikSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7537BA49209C6CF400FEFDFE /* Build configuration list for PBXNativeTarget "StepikSearchTests" */;
+			buildPhases = (
+				7537BA39209C6CF400FEFDFE /* Sources */,
+				7537BA3A209C6CF400FEFDFE /* Frameworks */,
+				7537BA3B209C6CF400FEFDFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7537BA3F209C6CF400FEFDFE /* PBXTargetDependency */,
+			);
+			name = StepikSearchTests;
+			productName = StepikSearchTests;
+			productReference = 7537BA3D209C6CF400FEFDFE /* StepikSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7537BA21209C6CF200FEFDFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Ivan Magda";
+				TargetAttributes = {
+					7537BA28209C6CF200FEFDFE = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					7537BA3C209C6CF400FEFDFE = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 7537BA28209C6CF200FEFDFE;
+					};
+				};
+			};
+			buildConfigurationList = 7537BA24209C6CF200FEFDFE /* Build configuration list for PBXProject "StepikSearch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7537BA20209C6CF200FEFDFE;
+			productRefGroup = 7537BA2A209C6CF200FEFDFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7537BA28209C6CF200FEFDFE /* StepikSearch */,
+				7537BA3C209C6CF400FEFDFE /* StepikSearchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7537BA27209C6CF200FEFDFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7537BA37209C6CF400FEFDFE /* LaunchScreen.storyboard in Resources */,
+				7537BA34209C6CF400FEFDFE /* Assets.xcassets in Resources */,
+				7537BA32209C6CF200FEFDFE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7537BA3B209C6CF400FEFDFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7537BA25209C6CF200FEFDFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7537BA2F209C6CF200FEFDFE /* ViewController.swift in Sources */,
+				7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7537BA39209C6CF400FEFDFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7537BA42209C6CF400FEFDFE /* StepikSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7537BA3F209C6CF400FEFDFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7537BA28209C6CF200FEFDFE /* StepikSearch */;
+			targetProxy = 7537BA3E209C6CF400FEFDFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7537BA30209C6CF200FEFDFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7537BA31209C6CF200FEFDFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7537BA36209C6CF400FEFDFE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7537BA44209C6CF400FEFDFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7537BA45209C6CF400FEFDFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7537BA47209C6CF400FEFDFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
+				INFOPLIST_FILE = StepikSearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.StepikSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7537BA48209C6CF400FEFDFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
+				INFOPLIST_FILE = StepikSearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.StepikSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7537BA4A209C6CF400FEFDFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
+				INFOPLIST_FILE = StepikSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.StepikSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StepikSearch.app/StepikSearch";
+			};
+			name = Debug;
+		};
+		7537BA4B209C6CF400FEFDFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
+				INFOPLIST_FILE = StepikSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.StepikSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StepikSearch.app/StepikSearch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7537BA24209C6CF200FEFDFE /* Build configuration list for PBXProject "StepikSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7537BA44209C6CF400FEFDFE /* Debug */,
+				7537BA45209C6CF400FEFDFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7537BA46209C6CF400FEFDFE /* Build configuration list for PBXNativeTarget "StepikSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7537BA47209C6CF400FEFDFE /* Debug */,
+				7537BA48209C6CF400FEFDFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7537BA49209C6CF400FEFDFE /* Build configuration list for PBXNativeTarget "StepikSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7537BA4A209C6CF400FEFDFE /* Debug */,
+				7537BA4B209C6CF400FEFDFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7537BA21209C6CF200FEFDFE /* Project object */;
+}
