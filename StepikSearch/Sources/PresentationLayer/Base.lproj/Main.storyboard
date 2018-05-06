@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPP-rk-rsW">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,19 +9,118 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Split Placeholder View Controller-->
+        <scene sceneID="Tb2-Xt-GdZ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StepikSearch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                <viewController id="dJ0-5v-hDb" customClass="SplitPlaceholderViewController" customModule="StepikSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iNs-XP-gmx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepik-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dEK-nU-Iqh">
+                                <rect key="frame" x="107" y="268" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9ps-Ua-ENJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="pyZ-5r-6M8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dEK-nU-Iqh" firstAttribute="centerY" secondItem="iNs-XP-gmx" secondAttribute="centerY" id="8ZL-W3-AE3"/>
+                            <constraint firstItem="dEK-nU-Iqh" firstAttribute="centerX" secondItem="iNs-XP-gmx" secondAttribute="centerX" id="YUC-zh-4GY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dQt-5Q-Q3z"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FUk-kY-HPf"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6K-Eu-Ro2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="55" y="427"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="c6T-nT-Zvy">
+            <objects>
+                <navigationController id="Vq4-gW-7DG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="MGN-l2-lrj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fBM-06-8b2">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8IS-YC-h8y" kind="relationship" relationship="rootViewController" id="H77-l9-dhY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoy-GI-FeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-480"/>
+        </scene>
+        <!--Split Placeholder View Controller-->
+        <scene sceneID="Gvg-Ms-aRj">
+            <objects>
+                <viewController id="8IS-YC-h8y" customClass="SplitPlaceholderViewController" customModule="StepikSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WJ5-YQ-5fg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="sci-ao-XfM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9re-0t-QSW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WX-G1-C8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="-480"/>
+        </scene>
+        <!--App Split View Controller-->
+        <scene sceneID="N4I-ZT-c6T">
+            <objects>
+                <splitViewController id="PPP-rk-rsW" customClass="AppSplitViewController" customModule="StepikSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="G7K-jg-Ytf" kind="relationship" relationship="masterViewController" id="pe3-jG-iyc"/>
+                        <segue destination="Tn5-0g-wsz" kind="relationship" relationship="detailViewController" id="Im0-Cq-xO9"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWm-TV-Mzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770" y="-104"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MeH-Ft-UPe">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="G7K-jg-Ytf" customClass="TabBarController" customModule="StepikSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VDH-2G-YJI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Vq4-gW-7DG" kind="relationship" relationship="viewControllers" id="bsj-Bu-2SH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ma-tI-Axj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-853" y="-480"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0P4-An-Fee">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tn5-0g-wsz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g59-l3-oOS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dJ0-5v-hDb" kind="relationship" relationship="rootViewController" id="34x-9w-0Xh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfL-6k-YPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-853" y="427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stepik-logo" width="1000" height="1000"/>
+    </resources>
 </document>

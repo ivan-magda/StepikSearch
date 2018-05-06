@@ -22,14 +22,32 @@
 
 import UIKit
 
-// MARK: ViewController: UIViewController
+// MARK: FavoriteViewController: UIViewController
 
-final class ViewController: UIViewController {
+final class FavoriteViewController: UIViewController, PrimaryViewController {
+
+    // MARK: Init
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: UIViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+
+    // MARK: Private API
+
+    private func setup() {
+        title = Constants.Strings.favorites
+        view.backgroundColor = Styles.Colors.background
     }
 
 }

@@ -22,30 +22,15 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: AppSplitViewController: UISplitViewController
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppSplitViewController: UISplitViewController {
 
-    // MARK: Instance Variables
+    // MARK: UIViewController lifecycle
 
-    var window: UIWindow?
-
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
-
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
     }
 
 }

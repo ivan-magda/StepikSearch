@@ -22,30 +22,21 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: DetailViewController: UIViewController
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class DetailViewController: UIViewController {
 
-    // MARK: Instance Variables
+    // MARK: UIViewController lifecycle
 
-    var window: UIWindow?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
 
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
+    // MARK: Private API
 
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    private func setup() {
+        title = Constants.Strings.detail
     }
 
 }

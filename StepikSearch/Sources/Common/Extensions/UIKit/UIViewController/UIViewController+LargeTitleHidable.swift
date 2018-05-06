@@ -20,32 +20,16 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import UIKit.UIViewController
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+extension UIViewController {
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Instance Variables
-
-    var window: UIWindow?
-
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
-
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    func hideLargeTitle() {
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        } else {
+            self.navigationController?.showLargeTitles(false)
+        }
     }
 
 }

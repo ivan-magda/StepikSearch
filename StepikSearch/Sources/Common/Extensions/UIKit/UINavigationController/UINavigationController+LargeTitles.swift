@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 Ivan Magda
+ * Copyright (c) 2017 Ivan Magda
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,32 +20,12 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import UIKit.UINavigationController
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+extension UINavigationController {
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Instance Variables
-
-    var window: UIWindow?
-
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
-
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    func showLargeTitles(_ show: Bool) {
+        navigationBar.prefersLargeTitles = show
     }
 
 }

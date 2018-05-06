@@ -22,30 +22,19 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: TabBarController: UITabBarController
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class TabBarController: UITabBarController {
 
-    // MARK: Instance Variables
+    enum Tab: Int {
+        case search = 0
+        case favorite = 1
+    }
 
-    var window: UIWindow?
+    // MARK: Public API
 
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
-
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    func showTab(_ tab: Tab) {
+        selectedIndex = tab.rawValue
     }
 
 }

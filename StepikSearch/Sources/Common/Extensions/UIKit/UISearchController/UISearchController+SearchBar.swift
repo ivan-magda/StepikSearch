@@ -20,32 +20,13 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import UIKit.UISearchController
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+extension UISearchController {
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Instance Variables
-
-    var window: UIWindow?
-
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
-
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    /// Returns true if the search query text is empty or nil.
+    func isEmpty() -> Bool {
+        return searchBar.text?.isEmpty ?? true
     }
 
 }

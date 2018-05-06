@@ -20,32 +20,22 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+enum Constants {
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Instance Variables
-
-    var window: UIWindow?
-
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
-
-    // MARK: UIApplicationDelegate
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
-
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+    enum Strings {
+        static let ok = NSLocalizedString("OK", comment: "")
+        static let cancel = NSLocalizedString("Cancel", comment: "")
+        static let yes = NSLocalizedString("Yes", comment: "")
+        static let no = NSLocalizedString("No", comment: "")
+        static let search = NSLocalizedString("Search", comment: "")
+        static let searchStepik = NSLocalizedString("Search Stepik", comment: "Used as a placeholder for the searchbar when searching for courses.")
+        static let clearAll = NSLocalizedString("Clear All", comment: "")
+        static let delete = NSLocalizedString("Delete", comment: "")
+        static let stepik = NSLocalizedString("Stepik", comment: "")
+        static let favorites = NSLocalizedString("Favorites", comment: "")
+        static let detail = NSLocalizedString("Detail", comment: "")
     }
 
 }

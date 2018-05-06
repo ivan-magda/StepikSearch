@@ -22,30 +22,34 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: SplitPlaceholderViewController: UIViewController
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class SplitPlaceholderViewController: UIViewController {
 
     // MARK: Instance Variables
 
-    var window: UIWindow?
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "stepik-logo"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
 
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
+        return imageView
     }()
 
-    // MARK: UIApplicationDelegate
+    // MARK: UIViewController lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // setup root VCs
-        window?.backgroundColor = Styles.Colors.background
-        rootNavigationManager.resetRootViewController()
+        view.backgroundColor = Styles.Colors.background
 
-        // setup UIAppearance overrides
-        Styles.setupAppearance()
-
-        return true
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: Styles.Sizes.splashImageSize),
+            imageView.widthAnchor.constraint(equalToConstant: Styles.Sizes.splashImageSize)
+        ])
     }
 
 }

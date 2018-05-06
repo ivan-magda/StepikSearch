@@ -8,11 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */; };
-		7537BA2F209C6CF200FEFDFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA2E209C6CF200FEFDFE /* ViewController.swift */; };
 		7537BA32209C6CF200FEFDFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA30209C6CF200FEFDFE /* Main.storyboard */; };
 		7537BA34209C6CF400FEFDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA33209C6CF400FEFDFE /* Assets.xcassets */; };
 		7537BA37209C6CF400FEFDFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */; };
 		7537BA42209C6CF400FEFDFE /* StepikSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */; };
+		75391F0D209E1B6800DD83CF /* AppSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F0C209E1B6800DD83CF /* AppSplitViewController.swift */; };
+		75391F0F209E1B8700DD83CF /* TabBarControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F0E209E1B8700DD83CF /* TabBarControllerr.swift */; };
+		75391F12209E1CD300DD83CF /* RootNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F11209E1CD300DD83CF /* RootNavigationManager.swift */; };
+		75391F15209E1E5D00DD83CF /* SplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F14209E1E5D00DD83CF /* SplitViewControllerDelegate.swift */; };
+		75391F18209E1F7600DD83CF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F17209E1F7600DD83CF /* Styles.swift */; };
+		75391F1A209E203300DD83CF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F19209E203300DD83CF /* UIColor+Hex.swift */; };
+		75391F1C209E228900DD83CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F1B209E228900DD83CF /* Constants.swift */; };
+		75391F23209E390B00DD83CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F22209E390B00DD83CF /* SearchViewController.swift */; };
+		75391F26209E4D4300DD83CF /* UISearchBar+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F25209E4D4300DD83CF /* UISearchBar+Keyboard.swift */; };
+		75391F2A209E52CB00DD83CF /* UINavigationController+LargeTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F29209E52CB00DD83CF /* UINavigationController+LargeTitles.swift */; };
+		75391F2D209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F2C209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift */; };
+		75391F30209E54CE00DD83CF /* UISearchController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F2F209E54CE00DD83CF /* UISearchController+SearchBar.swift */; };
+		75391F33209E56C000DD83CF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F32209E56C000DD83CF /* FavoriteViewController.swift */; };
+		75391F36209E581300DD83CF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F35209E581300DD83CF /* DetailViewController.swift */; };
+		75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +42,6 @@
 /* Begin PBXFileReference section */
 		7537BA29209C6CF200FEFDFE /* StepikSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepikSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7537BA2C209C6CF200FEFDFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7537BA2E209C6CF200FEFDFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7537BA31209C6CF200FEFDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7537BA33209C6CF400FEFDFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7537BA36209C6CF400FEFDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +49,21 @@
 		7537BA3D209C6CF400FEFDFE /* StepikSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikSearchTests.swift; sourceTree = "<group>"; };
 		7537BA43209C6CF400FEFDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75391F0C209E1B6800DD83CF /* AppSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSplitViewController.swift; sourceTree = "<group>"; };
+		75391F0E209E1B8700DD83CF /* TabBarControllerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerr.swift; sourceTree = "<group>"; };
+		75391F11209E1CD300DD83CF /* RootNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationManager.swift; sourceTree = "<group>"; };
+		75391F14209E1E5D00DD83CF /* SplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerDelegate.swift; sourceTree = "<group>"; };
+		75391F17209E1F7600DD83CF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		75391F19209E203300DD83CF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		75391F1B209E228900DD83CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		75391F22209E390B00DD83CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		75391F25209E4D4300DD83CF /* UISearchBar+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Keyboard.swift"; sourceTree = "<group>"; };
+		75391F29209E52CB00DD83CF /* UINavigationController+LargeTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+LargeTitles.swift"; sourceTree = "<group>"; };
+		75391F2C209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LargeTitleHidable.swift"; sourceTree = "<group>"; };
+		75391F2F209E54CE00DD83CF /* UISearchController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchController+SearchBar.swift"; sourceTree = "<group>"; };
+		75391F32209E56C000DD83CF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		75391F35209E581300DD83CF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitPlaceholderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +126,7 @@
 			children = (
 				7537BA54209C719000FEFDFE /* ApplicationLayer */,
 				7537BA56209C71C900FEFDFE /* PresentationLayer */,
+				75391F1D209E37A200DD83CF /* Common */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -121,7 +150,9 @@
 		7537BA53209C710400FEFDFE /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				7537BA2E209C6CF200FEFDFE /* ViewController.swift */,
+				75391F21209E38D700DD83CF /* Search */,
+				75391F31209E56AA00DD83CF /* Favorites */,
+				75391F34209E57F900DD83CF /* Detail */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -130,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7537BA55209C719F00FEFDFE /* AppDelegate */,
+				75391F10209E1CC600DD83CF /* RootNavigationManager */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -145,6 +177,8 @@
 		7537BA56209C71C900FEFDFE /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				75391F13209E1E4700DD83CF /* ViewControllers */,
+				75391F16209E1F6200DD83CF /* Views */,
 				7537BA53209C710400FEFDFE /* UserStories */,
 				7537BA30209C6CF200FEFDFE /* Main.storyboard */,
 				7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */,
@@ -158,6 +192,126 @@
 				7537BA38209C6CF400FEFDFE /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75391F10209E1CC600DD83CF /* RootNavigationManager */ = {
+			isa = PBXGroup;
+			children = (
+				75391F11209E1CD300DD83CF /* RootNavigationManager.swift */,
+			);
+			path = RootNavigationManager;
+			sourceTree = "<group>";
+		};
+		75391F13209E1E4700DD83CF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75391F0C209E1B6800DD83CF /* AppSplitViewController.swift */,
+				75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */,
+				75391F14209E1E5D00DD83CF /* SplitViewControllerDelegate.swift */,
+				75391F0E209E1B8700DD83CF /* TabBarControllerr.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75391F16209E1F6200DD83CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75391F17209E1F7600DD83CF /* Styles.swift */,
+				75391F1B209E228900DD83CF /* Constants.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75391F1D209E37A200DD83CF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				75391F1E209E37BA00DD83CF /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		75391F1E209E37BA00DD83CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75391F1F209E37C600DD83CF /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		75391F1F209E37C600DD83CF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				75391F2E209E54AD00DD83CF /* UISearchController */,
+				75391F2B209E52E800DD83CF /* UIViewController */,
+				75391F28209E52BD00DD83CF /* UINavigationController */,
+				75391F20209E37D300DD83CF /* UIColor */,
+				75391F24209E4D2C00DD83CF /* UISearchBar */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		75391F20209E37D300DD83CF /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				75391F19209E203300DD83CF /* UIColor+Hex.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		75391F21209E38D700DD83CF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				75391F22209E390B00DD83CF /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		75391F24209E4D2C00DD83CF /* UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				75391F25209E4D4300DD83CF /* UISearchBar+Keyboard.swift */,
+			);
+			path = UISearchBar;
+			sourceTree = "<group>";
+		};
+		75391F28209E52BD00DD83CF /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				75391F29209E52CB00DD83CF /* UINavigationController+LargeTitles.swift */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		75391F2B209E52E800DD83CF /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75391F2C209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		75391F2E209E54AD00DD83CF /* UISearchController */ = {
+			isa = PBXGroup;
+			children = (
+				75391F2F209E54CE00DD83CF /* UISearchController+SearchBar.swift */,
+			);
+			path = UISearchController;
+			sourceTree = "<group>";
+		};
+		75391F31209E56AA00DD83CF /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				75391F32209E56C000DD83CF /* FavoriteViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		75391F34209E57F900DD83CF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				75391F35209E581300DD83CF /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +448,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7537BA2F209C6CF200FEFDFE /* ViewController.swift in Sources */,
+				75391F1A209E203300DD83CF /* UIColor+Hex.swift in Sources */,
+				75391F2D209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift in Sources */,
+				75391F15209E1E5D00DD83CF /* SplitViewControllerDelegate.swift in Sources */,
+				75391F0D209E1B6800DD83CF /* AppSplitViewController.swift in Sources */,
+				75391F23209E390B00DD83CF /* SearchViewController.swift in Sources */,
+				75391F2A209E52CB00DD83CF /* UINavigationController+LargeTitles.swift in Sources */,
+				75391F30209E54CE00DD83CF /* UISearchController+SearchBar.swift in Sources */,
+				75391F26209E4D4300DD83CF /* UISearchBar+Keyboard.swift in Sources */,
+				75391F12209E1CD300DD83CF /* RootNavigationManager.swift in Sources */,
+				75391F18209E1F7600DD83CF /* Styles.swift in Sources */,
+				75391F33209E56C000DD83CF /* FavoriteViewController.swift in Sources */,
+				75391F0F209E1B8700DD83CF /* TabBarControllerr.swift in Sources */,
+				75391F36209E581300DD83CF /* DetailViewController.swift in Sources */,
+				75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */,
 				7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */,
+				75391F1C209E228900DD83CF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
