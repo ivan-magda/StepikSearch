@@ -28,8 +28,6 @@ final class SearchTableViewDataSource: NSObject, UITableViewDataSource {
 
     // MARK: Instance variables
 
-    static let cellReuseIdentifier = "SearchTableViewCell"
-
     private var data = [Course]()
 
     // MARK: Public API
@@ -49,16 +47,7 @@ final class SearchTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewDataSource.cellReuseIdentifier)
-
-        if cell == nil {
-            cell = UITableViewCell(
-                style: .default,
-                reuseIdentifier: SearchTableViewDataSource.cellReuseIdentifier
-            )
-        }
-
-        return cell!
+        return tableView.dequeueReusableCell(withIdentifier: BasicTableViewCell.identifier)!
     }
 
 }

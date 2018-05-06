@@ -96,6 +96,10 @@ final class SearchViewController: UIViewController, PrimaryViewController {
         view.addSubview(tableView)
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
+        tableView.register(
+            BasicTableViewCell.nib,
+            forCellReuseIdentifier: BasicTableViewCell.identifier
+        )
 
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

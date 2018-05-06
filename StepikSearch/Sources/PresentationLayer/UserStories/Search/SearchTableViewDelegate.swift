@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import SDWebImage
 
 // MARK: SearchTableViewDelegate: NSObject, UITableViewDelegate
 
@@ -45,10 +46,19 @@ final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
     // MARK: UITableViewDelegate
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.setCourse(data[indexPath.row])
+        guard let cell = cell as? BasicTableViewCell else { fatalError("Unexpected cell type") }
 
-        cell.textLabel?.text = viewModel.title
+        let course = data[indexPath.row]
+        viewModel.setCourse(course)
+
         cell.backgroundColor = viewModel.cellBackgroundColor
+        cell.titleLabel?.text = viewModel.title
+        cell._imageView?.sd_setImage(
+            with: URL(string: course.coverUrl),
+            placeholderImage: UIImage(named: "loading"),
+            options: [.cacheMemoryOnly, .retryFailed],
+            completed: nil
+        )
     }
 
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BasicTableViewCell" customModule="StepikSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-U6-DSG">
+                        <rect key="frame" x="12" y="6" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Mf9-Ul-jiz"/>
+                            <constraint firstAttribute="width" constant="32" id="hQs-8L-wTF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-Oi-PLX">
+                        <rect key="frame" x="52" y="12" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t9L-Oi-PLX" secondAttribute="trailing" constant="20" symbolic="YES" id="0wn-L8-iLS"/>
+                    <constraint firstItem="jpG-U6-DSG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="AhA-mI-cOY"/>
+                    <constraint firstItem="t9L-Oi-PLX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JFF-xf-5jZ"/>
+                    <constraint firstItem="t9L-Oi-PLX" firstAttribute="leading" secondItem="jpG-U6-DSG" secondAttribute="trailing" constant="8" symbolic="YES" id="nIL-5f-4Pw"/>
+                    <constraint firstItem="jpG-U6-DSG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="spy-eA-9TO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="_imageView" destination="jpG-U6-DSG" id="vHk-9p-tQX"/>
+                <outlet property="titleLabel" destination="t9L-Oi-PLX" id="31n-UX-D7l"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="loading" width="22" height="22"/>
+    </resources>
+</document>
