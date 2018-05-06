@@ -90,7 +90,7 @@ final class FavoritesViewController: UIViewController, PrimaryViewController {
         )
         tableViewDelegate.didSelect = { [weak self] course in
             guard let strongSelf = self else { return }
-            strongSelf.navigationDelegate?.showDetailViewController(onto: strongSelf, course: course)
+            strongSelf.navigationDelegate?.showCourseDetails(course, vc: strongSelf)
         }
 
         NotificationCenter.default.addObserver(

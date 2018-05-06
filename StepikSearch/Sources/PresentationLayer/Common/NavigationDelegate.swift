@@ -24,6 +24,6 @@ import UIKit
 
 protocol NavigationDelegate: class {
 
-    func showDetailViewController(onto vc: UIViewController, course: Course)
+    func showCourseDetails(_ course: Course, vc: UIViewController)
 
 }

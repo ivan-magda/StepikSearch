@@ -120,7 +120,7 @@ final class RootNavigationManager {
 
 extension RootNavigationManager: NavigationDelegate {
 
-    func showDetailViewController(onto vc: UIViewController, course: Course) {
+    func showCourseDetails(_ course: Course, vc: UIViewController) {
         let detail = DetailViewController(course: course, cache: stepikFavoritesCache)
         let navigation = UINavigationController(rootViewController: detail)
         vc.showDetailViewController(navigation, sender: nil)
