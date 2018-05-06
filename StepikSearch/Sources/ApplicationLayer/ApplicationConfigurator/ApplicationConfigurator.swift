@@ -22,30 +22,28 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: ApplicationConfigurator
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class ApplicationConfigurator {
 
     // MARK: Instance Variables
 
-    var window: UIWindow?
+    weak private var window: UIWindow?
 
-    private lazy var rootNavigationManager: RootNavigationManager = {
-        return RootNavigationManager(with: self.window)
-    }()
+    // MARK: Init
 
-    private lazy var applicationConfigurator: ApplicationConfigurator = {
-        return ApplicationConfigurator(with: self.window)
-    }()
+    init(with window: UIWindow?) {
+        self.window = window
+    }
 
-    // MARK: UIApplicationDelegate
+    // MARK: Public API
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        applicationConfigurator.configure()
-        rootNavigationManager.resetRootViewController()
+    /// Method is used to setup application.
+    func configure() {
+        window?.backgroundColor = Styles.Colors.background
 
-        return true
+        // setup UIAppearance overrides
+        Styles.setupAppearance()
     }
 
 }

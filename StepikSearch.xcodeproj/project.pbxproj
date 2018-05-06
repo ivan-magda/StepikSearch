@@ -27,6 +27,7 @@
 		75391F33209E56C000DD83CF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F32209E56C000DD83CF /* FavoriteViewController.swift */; };
 		75391F36209E581300DD83CF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F35209E581300DD83CF /* DetailViewController.swift */; };
 		75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */; };
+		75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		75391F32209E56C000DD83CF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		75391F35209E581300DD83CF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitPlaceholderViewController.swift; sourceTree = "<group>"; };
+		75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,10 @@
 			children = (
 				7537BA54209C719000FEFDFE /* ApplicationLayer */,
 				7537BA56209C71C900FEFDFE /* PresentationLayer */,
+				75FCFABE209EEA95004D3BCB /* BusinessLogicLayer */,
+				75FCFABF209EEAB9004D3BCB /* CoreLayer */,
+				75FCFAC0209EEAC2004D3BCB /* Models */,
+				75FCFAC4209EEF21004D3BCB /* Constants */,
 				75391F1D209E37A200DD83CF /* Common */,
 			);
 			path = Sources;
@@ -162,6 +168,7 @@
 			children = (
 				7537BA55209C719F00FEFDFE /* AppDelegate */,
 				75391F10209E1CC600DD83CF /* RootNavigationManager */,
+				75FCFAC1209EEB2B004D3BCB /* ApplicationConfigurator */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -216,8 +223,6 @@
 		75391F16209E1F6200DD83CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				75391F17209E1F7600DD83CF /* Styles.swift */,
-				75391F1B209E228900DD83CF /* Constants.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +317,44 @@
 				75391F35209E581300DD83CF /* DetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		75FCFABE209EEA95004D3BCB /* BusinessLogicLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogicLayer;
+			sourceTree = "<group>";
+		};
+		75FCFABF209EEAB9004D3BCB /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		75FCFAC0209EEAC2004D3BCB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75FCFAC1209EEB2B004D3BCB /* ApplicationConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */,
+			);
+			path = ApplicationConfigurator;
+			sourceTree = "<group>";
+		};
+		75FCFAC4209EEF21004D3BCB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				75391F17209E1F7600DD83CF /* Styles.swift */,
+				75391F1B209E228900DD83CF /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +494,7 @@
 				75391F1A209E203300DD83CF /* UIColor+Hex.swift in Sources */,
 				75391F2D209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift in Sources */,
 				75391F15209E1E5D00DD83CF /* SplitViewControllerDelegate.swift in Sources */,
+				75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */,
 				75391F0D209E1B6800DD83CF /* AppSplitViewController.swift in Sources */,
 				75391F23209E390B00DD83CF /* SearchViewController.swift in Sources */,
 				75391F2A209E52CB00DD83CF /* UINavigationController+LargeTitles.swift in Sources */,

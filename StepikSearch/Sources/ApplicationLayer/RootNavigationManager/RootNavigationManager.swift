@@ -53,11 +53,23 @@ final class RootNavigationManager {
 
     // MARK: Public API
 
-    public func resetRootViewController() {
+    func resetRootViewController() {
         tabBarController?.viewControllers = [
             newSearchRootViewController(),
             newFavoriteRootViewController()
         ]
+    }
+
+    @discardableResult
+    func selectViewController(atIndex index: Int) -> UIViewController? {
+        tabBarController?.selectedIndex = index
+        return tabBarController?.selectedViewController
+    }
+
+    @discardableResult
+    func selectViewController(atTab tab: TabBarController.Tab) -> UIViewController? {
+        tabBarController?.showTab(tab)
+        return tabBarController?.selectedViewController
     }
 
     // MARK: Private API
