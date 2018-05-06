@@ -38,6 +38,7 @@
 		75D4D85A209F858000EBBB8C /* FavoritesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */; };
 		75D4D85D209F86F500EBBB8C /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */; };
 		75D6D3A3209F90FE0086AF1B /* SplitViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6D3A2209F90FE0086AF1B /* SplitViewTests.swift */; };
+		75D6D3A6209F92220086AF1B /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6D3A5209F92220086AF1B /* CourseTests.swift */; };
 		75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */; };
 		75FCFACA209EF3E7004D3BCB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC9209EF3E7004D3BCB /* Resource.swift */; };
 		75FCFACC209EF40A004D3BCB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFACB209EF40A004D3BCB /* Result.swift */; };
@@ -119,6 +120,7 @@
 		75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDelegate.swift; sourceTree = "<group>"; };
 		75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		75D6D3A2209F90FE0086AF1B /* SplitViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewTests.swift; sourceTree = "<group>"; };
+		75D6D3A5209F92220086AF1B /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
 		75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
 		75FCFAC9209EF3E7004D3BCB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		75FCFACB209EF40A004D3BCB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				75D6D3A2209F90FE0086AF1B /* SplitViewTests.swift */,
+				75D6D3A5209F92220086AF1B /* CourseTests.swift */,
 				75D6D3A4209F91750086AF1B /* Supporting Files */,
 			);
 			path = StepikSearchTests;
@@ -868,6 +871,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D6D3A6209F92220086AF1B /* CourseTests.swift in Sources */,
 				75D6D3A3209F90FE0086AF1B /* SplitViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1069,7 +1073,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
-				INFOPLIST_FILE = StepikSearchTests/Info.plist;
+				INFOPLIST_FILE = "StepikSearchTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1090,7 +1094,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
-				INFOPLIST_FILE = StepikSearchTests/Info.plist;
+				INFOPLIST_FILE = "StepikSearchTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
