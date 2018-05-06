@@ -83,7 +83,8 @@ final class RootNavigationManager {
     }
 
     private func newSearchRootViewController() -> UIViewController {
-        let controller = SearchViewController()
+        let searchService = StepikSearchServiceImplementation(Webservice())
+        let controller = SearchViewController(stepikSearchService: searchService)
         
         let nav = UINavigationController(rootViewController: controller)
         nav.navigationBar.prefersLargeTitles = true

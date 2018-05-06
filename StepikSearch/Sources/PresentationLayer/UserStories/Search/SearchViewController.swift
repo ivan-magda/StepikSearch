@@ -28,11 +28,14 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     // MARK: Instance Variables
 
+    let stepikSearchService: StepikSearchService
+
     private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: Init
 
-    init() {
+    init(stepikSearchService: StepikSearchService) {
+        self.stepikSearchService = stepikSearchService
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -71,7 +74,13 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 extension SearchViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
-        print("Search: \(searchController.searchBar.text ?? "")")
+        guard let query = searchController.searchBar.text,
+            !searchController.isEmpty() else { return }
+        stepikSearchService.search(for: query) { result in
+            if let value = result.value {
+                print(value[0])
+            }
+        }
     }
 
 }

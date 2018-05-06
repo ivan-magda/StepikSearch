@@ -38,4 +38,24 @@ enum Constants {
         static let detail = NSLocalizedString("Detail", comment: "")
     }
 
+    enum Stepik {
+        static let apiScheme = "https"
+        static let apiHost = "stepik.org"
+        static let apiPath = "/api"
+
+        enum Paths {
+            static let searchResults = "/search-results"
+        }
+
+        enum Params {
+            static let query = "query"
+        }
+
+        enum Response {
+            static let title = "course_title"
+            static let coverUrl = "course_cover"
+            static let searchResults = "search-results"
+        }
+    }
+
 }
