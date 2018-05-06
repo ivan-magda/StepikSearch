@@ -11,7 +11,6 @@
 		7537BA32209C6CF200FEFDFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA30209C6CF200FEFDFE /* Main.storyboard */; };
 		7537BA34209C6CF400FEFDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA33209C6CF400FEFDFE /* Assets.xcassets */; };
 		7537BA37209C6CF400FEFDFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */; };
-		7537BA42209C6CF400FEFDFE /* StepikSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */; };
 		75391F0D209E1B6800DD83CF /* AppSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F0C209E1B6800DD83CF /* AppSplitViewController.swift */; };
 		75391F0F209E1B8700DD83CF /* TabBarControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F0E209E1B8700DD83CF /* TabBarControllerr.swift */; };
 		75391F12209E1CD300DD83CF /* RootNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F11209E1CD300DD83CF /* RootNavigationManager.swift */; };
@@ -38,6 +37,7 @@
 		75D4D858209F856F00EBBB8C /* FavoritesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D857209F856F00EBBB8C /* FavoritesTableViewDataSource.swift */; };
 		75D4D85A209F858000EBBB8C /* FavoritesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */; };
 		75D4D85D209F86F500EBBB8C /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */; };
+		75D6D3A3209F90FE0086AF1B /* SplitViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6D3A2209F90FE0086AF1B /* SplitViewTests.swift */; };
 		75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */; };
 		75FCFACA209EF3E7004D3BCB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC9209EF3E7004D3BCB /* Resource.swift */; };
 		75FCFACC209EF40A004D3BCB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFACB209EF40A004D3BCB /* Result.swift */; };
@@ -92,7 +92,6 @@
 		7537BA36209C6CF400FEFDFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7537BA38209C6CF400FEFDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7537BA3D209C6CF400FEFDFE /* StepikSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikSearchTests.swift; sourceTree = "<group>"; };
 		7537BA43209C6CF400FEFDFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75391F0C209E1B6800DD83CF /* AppSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSplitViewController.swift; sourceTree = "<group>"; };
 		75391F0E209E1B8700DD83CF /* TabBarControllerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerr.swift; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		75D4D857209F856F00EBBB8C /* FavoritesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDataSource.swift; sourceTree = "<group>"; };
 		75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDelegate.swift; sourceTree = "<group>"; };
 		75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
+		75D6D3A2209F90FE0086AF1B /* SplitViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewTests.swift; sourceTree = "<group>"; };
 		75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
 		75FCFAC9209EF3E7004D3BCB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		75FCFACB209EF40A004D3BCB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 		7537BA40209C6CF400FEFDFE /* StepikSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				7537BA41209C6CF400FEFDFE /* StepikSearchTests.swift */,
-				7537BA43209C6CF400FEFDFE /* Info.plist */,
+				75D6D3A2209F90FE0086AF1B /* SplitViewTests.swift */,
+				75D6D3A4209F91750086AF1B /* Supporting Files */,
 			);
 			path = StepikSearchTests;
 			sourceTree = "<group>";
@@ -464,6 +464,14 @@
 				75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		75D6D3A4209F91750086AF1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7537BA43209C6CF400FEFDFE /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		75FCFABE209EEA95004D3BCB /* BusinessLogicLayer */ = {
@@ -860,7 +868,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7537BA42209C6CF400FEFDFE /* StepikSearchTests.swift in Sources */,
+				75D6D3A3209F90FE0086AF1B /* SplitViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
