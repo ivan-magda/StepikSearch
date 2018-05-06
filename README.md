@@ -9,7 +9,6 @@ The repository contains implementation of the *JetBrains's Summer 2018 Intership
 - Search for courses on [Stepik](https://stepik.org) with the use of [API](https://stepik.org/api/docs).
 - Add courses to favorites. Favorite courses must be available whiule offline.
 
-
 ## Author
 I'm [Ivan Magda](https://www.facebook.com/ivan.magda).
 Email: [imagda15@gmail.com](mailto:imagda15@gmail.com).
@@ -19,3 +18,15 @@ Twitter: [@magda_ivan](https://twitter.com/magda_ivan).
 This project is open-sourced software licensed under the MIT License.
 
 See the LICENSE file for more information.
+
+## Screenshots
+
+<img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPad-5th-generation-search.png"
+width="334" height="446">
+<img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPad-5th-generation-detail.png"
+width="334" height="446" hspace=50>
+
+<img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPhone-8-Plus-search.png"
+width="311" height="552">
+<img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPhone-8-Plus-search-land.png"
+width="552" height="311">
