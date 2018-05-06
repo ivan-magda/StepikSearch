@@ -20,35 +20,39 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: SearchTableViewDelegate: NSObject, UITableViewDelegate
+// MARK: Cachable
 
-final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
+protocol Cachable {
 
-    // MARK: Instance variables
+    var fileName: String { get }
 
-    private var data = [Course]()
+    /// Returns a `Data` encoded representation of the item.
+    func transform() -> Data
+    
+}
 
-    private var viewModel: SearchResultCellViewModel!
+// MARK: - Cachable (Codable Transform) -
 
-    // MARK: Public API
-
-    func onDataChanged(_ data: [Course]) {
-        self.data = data
-
-        if viewModel == nil && data.count > 0 {
-            self.viewModel = SearchResultCellViewModel(course: data[0])
+extension Cachable where Self: Codable {
+    func transform() -> Data {
+        do {
+            let encoded = try JSONEncoder().encode(self)
+            return encoded
+        } catch let error {
+            fatalError("Unable to encode object: \(error)")
         }
     }
+}
 
-    // MARK: UITableViewDelegate
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.setCourse(data[indexPath.row])
-
-        cell.textLabel?.text = viewModel.title
-        cell.backgroundColor = viewModel.cellBackgroundColor
+extension Array where Element: Codable {
+    func transform() -> Data {
+        do {
+            let encoded = try JSONEncoder().encode(self)
+            return encoded
+        } catch let error {
+            fatalError("Unable to encode object: \(error)")
+        }
     }
-
 }

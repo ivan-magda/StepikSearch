@@ -32,8 +32,9 @@ final class RootNavigationManager {
 
     // weak refs to avoid cycles
     weak private var rootViewController: UISplitViewController?
-
     weak private var detailNavigationController: UINavigationController?
+
+    // MARK: Init
 
     init(with window: UIWindow?) {
         guard let rootViewController = window?.rootViewController as? UISplitViewController else {
@@ -83,8 +84,10 @@ final class RootNavigationManager {
     }
 
     private func newSearchRootViewController() -> UIViewController {
-        let searchService = StepikSearchServiceImplementation(Webservice())
-        let controller = SearchViewController(stepikSearchService: searchService)
+        let controller = SearchViewController(
+            stepikSearchService: StepikSearchServiceImplementation(),
+            stepikTemporaryCache: StepikSearchResultsTemporaryCache()
+        )
         
         let nav = UINavigationController(rootViewController: controller)
         nav.navigationBar.prefersLargeTitles = true

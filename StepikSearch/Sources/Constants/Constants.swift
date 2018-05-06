@@ -56,6 +56,10 @@ enum Constants {
             static let coverUrl = "course_cover"
             static let searchResults = "search-results"
         }
+
+        enum Cache {
+            static let searchResults = "search-results"
+        }
     }
 
 }

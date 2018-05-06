@@ -22,29 +22,10 @@
 
 import Foundation
 
-// MARK: StepikSearchServiceImplementation
+protocol StepikTemporaryCache {
 
-final class StepikSearchServiceImplementation {
+    var fileName: String { get }
 
-    // MARK: Instance Variables
-
-    private let webservice: Webservice
-
-    // MARK: Init
-
-    init(_ webservice: Webservice) {
-        self.webservice = webservice
-    }
-
-}
-
-// MARK: - StepikSearchServiceImplementation (StepikSearchService) -
-
-extension StepikSearchServiceImplementation: StepikSearchService {
-
-    func search(for query: String, callback: @escaping (Result<[Course]>) -> Swift.Void) {
-        let resource = StepikResources.searchResults(query.lowercased())
-        webservice.load(resource, completion: callback)
-    }
+    func persist(_ data: Data, completion: @escaping CachePersistenceBlock)
 
 }

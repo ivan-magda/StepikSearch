@@ -43,6 +43,11 @@
 		75FCFAEC209F2C60004D3BCB /* UIViewController+SmartDeselection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAEB209F2C60004D3BCB /* UIViewController+SmartDeselection.swift */; };
 		75FCFAEE209F2DFA004D3BCB /* SearchTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */; };
 		75FCFAF0209F2E16004D3BCB /* SearchTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */; };
+		75FCFAF3209F3A6A004D3BCB /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAF2209F3A6A004D3BCB /* Cache.swift */; };
+		75FCFAF5209F3C93004D3BCB /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAF4209F3C93004D3BCB /* Cachable.swift */; };
+		75FCFAF9209F401B004D3BCB /* StepikTemporaryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */; };
+		75FCFAFB209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */; };
+		75FCFAFE209F4EAE004D3BCB /* SearchResultCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAFD209F4EAD004D3BCB /* SearchResultCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +101,11 @@
 		75FCFAEB209F2C60004D3BCB /* UIViewController+SmartDeselection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SmartDeselection.swift"; sourceTree = "<group>"; };
 		75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewDataSource.swift; sourceTree = "<group>"; };
 		75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewDelegate.swift; sourceTree = "<group>"; };
+		75FCFAF2209F3A6A004D3BCB /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		75FCFAF4209F3C93004D3BCB /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTemporaryCache.swift; sourceTree = "<group>"; };
+		75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikSearchResultsTemporaryCache.swift; sourceTree = "<group>"; };
+		75FCFAFD209F4EAD004D3BCB /* SearchResultCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +307,7 @@
 		75391F21209E38D700DD83CF /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				75FCFAFC209F4E8E004D3BCB /* ViewModels */,
 				75391F22209E390B00DD83CF /* SearchViewController.swift */,
 				75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */,
 				75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */,
@@ -397,6 +408,7 @@
 		75FCFAC5209EF372004D3BCB /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				75FCFAF1209F39ED004D3BCB /* Cache */,
 				75FCFAC6209EF391004D3BCB /* NetworkClients */,
 				75FCFADB209EFFE6004D3BCB /* UrlBuilder */,
 			);
@@ -440,17 +452,9 @@
 		75FCFAD2209EF6E5004D3BCB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				75FCFAD3209EF6FF004D3BCB /* ConcreteServices */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		75FCFAD3209EF6FF004D3BCB /* ConcreteServices */ = {
-			isa = PBXGroup;
-			children = (
 				75FCFADE209F095F004D3BCB /* Stepik */,
 			);
-			path = ConcreteServices;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		75FCFAD4209EF739004D3BCB /* StepikSearchService */ = {
@@ -474,8 +478,8 @@
 		75FCFADE209F095F004D3BCB /* Stepik */ = {
 			isa = PBXGroup;
 			children = (
-				75FCFAE0209F09AC004D3BCB /* Helpers */,
-				75FCFAD4209EF739004D3BCB /* StepikSearchService */,
+				75FCFAF6209F3FBF004D3BCB /* Networking */,
+				75FCFAF7209F3FD5004D3BCB /* Persistence */,
 			);
 			path = Stepik;
 			sourceTree = "<group>";
@@ -512,6 +516,41 @@
 				75FCFAE9209F1C7E004D3BCB /* StepikResponseMapper.swift */,
 			);
 			path = StepikResponseMapper;
+			sourceTree = "<group>";
+		};
+		75FCFAF1209F39ED004D3BCB /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAF2209F3A6A004D3BCB /* Cache.swift */,
+				75FCFAF4209F3C93004D3BCB /* Cachable.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		75FCFAF6209F3FBF004D3BCB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAE0209F09AC004D3BCB /* Helpers */,
+				75FCFAD4209EF739004D3BCB /* StepikSearchService */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		75FCFAF7209F3FD5004D3BCB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */,
+				75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		75FCFAFC209F4E8E004D3BCB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAFD209F4EAD004D3BCB /* SearchResultCellViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,12 +691,16 @@
 				75FCFAD1209EF49D004D3BCB /* GCD.swift in Sources */,
 				75391F1A209E203300DD83CF /* UIColor+Hex.swift in Sources */,
 				75391F2D209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift in Sources */,
+				75FCFAF5209F3C93004D3BCB /* Cachable.swift in Sources */,
+				75FCFAFB209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift in Sources */,
+				75FCFAF3209F3A6A004D3BCB /* Cache.swift in Sources */,
 				75FCFACC209EF40A004D3BCB /* Result.swift in Sources */,
 				75391F15209E1E5D00DD83CF /* SplitViewControllerDelegate.swift in Sources */,
 				75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */,
 				75391F0D209E1B6800DD83CF /* AppSplitViewController.swift in Sources */,
 				75391F23209E390B00DD83CF /* SearchViewController.swift in Sources */,
 				75FCFAD8209EF878004D3BCB /* StepikSearchServiceImplementation.swift in Sources */,
+				75FCFAF9209F401B004D3BCB /* StepikTemporaryCache.swift in Sources */,
 				75FCFADD209EFFFA004D3BCB /* UrlBuilderImplementation.swift in Sources */,
 				75391F2A209E52CB00DD83CF /* UINavigationController+LargeTitles.swift in Sources */,
 				75FCFAF0209F2E16004D3BCB /* SearchTableViewDelegate.swift in Sources */,
@@ -676,6 +719,7 @@
 				75FCFAE3209F09C2004D3BCB /* StepikUrlBuilder.swift in Sources */,
 				75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */,
 				7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */,
+				75FCFAFE209F4EAE004D3BCB /* SearchResultCellViewModel.swift in Sources */,
 				75FCFAEA209F1C7E004D3BCB /* StepikResponseMapper.swift in Sources */,
 				75FCFACE209EF42D004D3BCB /* Webservice.swift in Sources */,
 				75391F1C209E228900DD83CF /* Constants.swift in Sources */,

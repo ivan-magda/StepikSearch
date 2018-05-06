@@ -22,6 +22,8 @@
 
 import Foundation
 
+// MARK: Course: Codable
+
 struct Course: Codable {
 
     let id: Int

@@ -29,6 +29,7 @@ final class SearchViewController: UIViewController, PrimaryViewController {
     // MARK: Instance Variables
 
     let stepikSearchService: StepikSearchService
+    let stepikTemporaryCache: StepikSearchResultsTemporaryCache
 
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -48,8 +49,12 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     // MARK: Init
 
-    init(stepikSearchService: StepikSearchService) {
+    init(
+        stepikSearchService: StepikSearchService,
+        stepikTemporaryCache: StepikSearchResultsTemporaryCache
+        ) {
         self.stepikSearchService = stepikSearchService
+        self.stepikTemporaryCache = stepikTemporaryCache
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -78,6 +83,10 @@ final class SearchViewController: UIViewController, PrimaryViewController {
         }
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: Private API
 
     private func setup() {
@@ -97,6 +106,29 @@ final class SearchViewController: UIViewController, PrimaryViewController {
         navigationItem.searchController = searchController
         searchController.searchBar.resignWhenKeyboardHides()
         definesPresentationContext = true
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleChangeNotification(_:)),
+            name: StepikSearchResultsTemporaryCache.changedNotification,
+            object: nil
+        )
+    }
+
+    @objc
+    private func handleChangeNotification(_ notification: Notification) {
+        onMain {
+            self.reloadData(notification.object as? [Course] ?? [])
+        }
+    }
+
+    private func reloadData(_ data: [Course]) {
+        tableViewDataSource.onDataChanged(data)
+        tableViewDelegate.onDataChanged(data)
+        tableView.reloadSections(
+            IndexSet(integer: tableViewDataSource.numberOfSections(in: tableView) - 1),
+            with: .automatic
+        )
     }
 
 }
@@ -105,17 +137,13 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
 extension SearchViewController: UISearchResultsUpdating {
 
+    // MARK: UISearchResultsUpdating
+
     func updateSearchResults(for searchController: UISearchController) {
         pendingSearchRequestWorkItem?.cancel()
 
         let requestWorkItem = DispatchWorkItem { [weak self] in
-            guard let query = searchController.searchBar.text,
-                !searchController.isEmpty() else { return }
-            self?.stepikSearchService.search(for: query) { result in
-                if let value = result.value {
-                    print(value[0])
-                }
-            }
+            self?.search(searchController.searchBar.text)
         }
 
         pendingSearchRequestWorkItem = requestWorkItem
@@ -123,6 +151,17 @@ extension SearchViewController: UISearchResultsUpdating {
             deadline: .now() + .milliseconds(750),
             execute: requestWorkItem
         )
+    }
+
+    // MARK: Private API
+
+    private func search(_ query: String?) {
+        guard let query = query,
+            !query.isEmpty else { return reloadData([]) }
+
+        stepikSearchService.search(for: query) { [weak self] result in
+            self?.stepikTemporaryCache.persist(result.value, completion: { _, _ in })
+        }
     }
 
 }

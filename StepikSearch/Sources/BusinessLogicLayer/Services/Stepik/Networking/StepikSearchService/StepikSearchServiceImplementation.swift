@@ -20,35 +20,31 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: SearchTableViewDelegate: NSObject, UITableViewDelegate
+// MARK: StepikSearchServiceImplementation
 
-final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
+final class StepikSearchServiceImplementation {
 
-    // MARK: Instance variables
+    // MARK: Instance Variables
 
-    private var data = [Course]()
+    private let webservice: Webservice
 
-    private var viewModel: SearchResultCellViewModel!
+    // MARK: Init
 
-    // MARK: Public API
-
-    func onDataChanged(_ data: [Course]) {
-        self.data = data
-
-        if viewModel == nil && data.count > 0 {
-            self.viewModel = SearchResultCellViewModel(course: data[0])
-        }
+    init(_ webservice: Webservice = Webservice()) {
+        self.webservice = webservice
     }
 
-    // MARK: UITableViewDelegate
+}
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.setCourse(data[indexPath.row])
+// MARK: - StepikSearchServiceImplementation (StepikSearchService) -
 
-        cell.textLabel?.text = viewModel.title
-        cell.backgroundColor = viewModel.cellBackgroundColor
+extension StepikSearchServiceImplementation: StepikSearchService {
+
+    func search(for query: String, callback: @escaping (Result<[Course]>) -> Swift.Void) {
+        let resource = StepikResources.searchResults(query.lowercased())
+        webservice.load(resource, completion: callback)
     }
 
 }

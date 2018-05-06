@@ -30,10 +30,22 @@ final class SearchTableViewDataSource: NSObject, UITableViewDataSource {
 
     static let cellReuseIdentifier = "SearchTableViewCell"
 
+    private var data = [Course]()
+
+    // MARK: Public API
+
+    func onDataChanged(_ data: [Course]) {
+        self.data = data
+    }
+
     // MARK: UITableViewDataSource
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

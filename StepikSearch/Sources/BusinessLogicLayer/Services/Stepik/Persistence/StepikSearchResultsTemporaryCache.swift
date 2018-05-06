@@ -20,35 +20,47 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: SearchTableViewDelegate: NSObject, UITableViewDelegate
+// MARK: StepikSearchResultsTemporaryCache
 
-final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
+final class StepikSearchResultsTemporaryCache {
 
-    // MARK: Instance variables
-
-    private var data = [Course]()
-
-    private var viewModel: SearchResultCellViewModel!
+    static let changedNotification = Notification.Name("TemporaryCacheChanged")
 
     // MARK: Public API
 
-    func onDataChanged(_ data: [Course]) {
-        self.data = data
-
-        if viewModel == nil && data.count > 0 {
-            self.viewModel = SearchResultCellViewModel(course: data[0])
+    func persist(_ courses: [Course]?, completion: @escaping CachePersistenceBlock) {
+        guard let courses = courses else { return }
+        persist(courses.transform()) { [weak self] (url, error) in
+            self?.postNotification(courses)
+            completion(url, error)
         }
     }
 
-    // MARK: UITableViewDelegate
+    // MARK: Private API
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.setCourse(data[indexPath.row])
+    private func postNotification(_ notifying: [Course]) {
+        NotificationCenter.default.post(
+            name: StepikSearchResultsTemporaryCache.changedNotification,
+            object: notifying,
+            userInfo: nil
+        )
+    }
 
-        cell.textLabel?.text = viewModel.title
-        cell.backgroundColor = viewModel.cellBackgroundColor
+}
+
+// MARK: - StepikSearchResultsTemporaryCache: StepikTemporaryCache -
+
+extension StepikSearchResultsTemporaryCache: StepikTemporaryCache {
+
+    var fileName: String {
+        return Constants.Stepik.Cache.searchResults
+    }
+
+    func persist(_ data: Data, completion: @escaping CachePersistenceBlock) {
+        let cache = Cache(destination: .temporary)
+        cache.persist(data: data, at: fileName, with: completion)
     }
 
 }

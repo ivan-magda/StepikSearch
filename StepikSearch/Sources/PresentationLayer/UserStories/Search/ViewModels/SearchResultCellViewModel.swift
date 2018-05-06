@@ -22,33 +22,32 @@
 
 import UIKit
 
-// MARK: SearchTableViewDelegate: NSObject, UITableViewDelegate
+// MARK: SearchResultCellViewModel
 
-final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
+struct SearchResultCellViewModel {
 
-    // MARK: Instance variables
+    // MARK: Instance Variables
 
-    private var data = [Course]()
+    private var course: Course
 
-    private var viewModel: SearchResultCellViewModel!
+    // MARK: Init
+
+    init(course: Course) {
+        self.course = course
+    }
 
     // MARK: Public API
 
-    func onDataChanged(_ data: [Course]) {
-        self.data = data
-
-        if viewModel == nil && data.count > 0 {
-            self.viewModel = SearchResultCellViewModel(course: data[0])
-        }
+    var cellBackgroundColor: UIColor {
+        return Styles.Colors.background
     }
 
-    // MARK: UITableViewDelegate
+    var title: String {
+        return course.title.capitalized
+    }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.setCourse(data[indexPath.row])
-
-        cell.textLabel?.text = viewModel.title
-        cell.backgroundColor = viewModel.cellBackgroundColor
+    mutating func setCourse(_ course: Course) {
+        self.course = course
     }
 
 }
