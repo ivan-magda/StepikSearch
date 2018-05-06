@@ -30,6 +30,17 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     let stepikSearchService: StepikSearchService
 
+    private let tableView: UITableView = {
+        let tableView = UITableView(frame: .zero)
+        tableView.backgroundColor = Styles.Colors.background
+        tableView.alwaysBounceVertical = true
+
+        return tableView
+    }()
+
+    private let tableViewDataSource = SearchTableViewDataSource()
+    private let tableViewDelegate = SearchTableViewDelegate()
+
     private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: Init
@@ -50,11 +61,29 @@ final class SearchViewController: UIViewController, PrimaryViewController {
         setup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        rz_smoothlyDeselectRows(tableView: tableView)
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        let bounds = view.bounds
+        if bounds != tableView.frame {
+            tableView.frame = bounds
+        }
+    }
+
     // MARK: Private API
 
     private func setup() {
         title = Constants.Strings.search
         view.backgroundColor = Styles.Colors.background
+
+        view.addSubview(tableView)
+        tableView.dataSource = tableViewDataSource
+        tableView.delegate = tableViewDelegate
 
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

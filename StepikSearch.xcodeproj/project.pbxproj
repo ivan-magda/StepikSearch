@@ -40,6 +40,9 @@
 		75FCFAE5209F0ADF004D3BCB /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAE4209F0ADF004D3BCB /* UrlBuilder.swift */; };
 		75FCFAE7209F0D2C004D3BCB /* StepikResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAE6209F0D2C004D3BCB /* StepikResources.swift */; };
 		75FCFAEA209F1C7E004D3BCB /* StepikResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAE9209F1C7E004D3BCB /* StepikResponseMapper.swift */; };
+		75FCFAEC209F2C60004D3BCB /* UIViewController+SmartDeselection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAEB209F2C60004D3BCB /* UIViewController+SmartDeselection.swift */; };
+		75FCFAEE209F2DFA004D3BCB /* SearchTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */; };
+		75FCFAF0209F2E16004D3BCB /* SearchTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		75FCFAE4209F0ADF004D3BCB /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 		75FCFAE6209F0D2C004D3BCB /* StepikResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikResources.swift; sourceTree = "<group>"; };
 		75FCFAE9209F1C7E004D3BCB /* StepikResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikResponseMapper.swift; sourceTree = "<group>"; };
+		75FCFAEB209F2C60004D3BCB /* UIViewController+SmartDeselection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SmartDeselection.swift"; sourceTree = "<group>"; };
+		75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewDataSource.swift; sourceTree = "<group>"; };
+		75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				75391F22209E390B00DD83CF /* SearchViewController.swift */,
+				75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */,
+				75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -316,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				75391F2C209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift */,
+				75FCFAEB209F2C60004D3BCB /* UIViewController+SmartDeselection.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -651,6 +660,7 @@
 				75FCFAD8209EF878004D3BCB /* StepikSearchServiceImplementation.swift in Sources */,
 				75FCFADD209EFFFA004D3BCB /* UrlBuilderImplementation.swift in Sources */,
 				75391F2A209E52CB00DD83CF /* UINavigationController+LargeTitles.swift in Sources */,
+				75FCFAF0209F2E16004D3BCB /* SearchTableViewDelegate.swift in Sources */,
 				75391F30209E54CE00DD83CF /* UISearchController+SearchBar.swift in Sources */,
 				75391F26209E4D4300DD83CF /* UISearchBar+Keyboard.swift in Sources */,
 				75FCFACA209EF3E7004D3BCB /* Resource.swift in Sources */,
@@ -659,8 +669,10 @@
 				75391F33209E56C000DD83CF /* FavoriteViewController.swift in Sources */,
 				75FCFAE5209F0ADF004D3BCB /* UrlBuilder.swift in Sources */,
 				75391F0F209E1B8700DD83CF /* TabBarControllerr.swift in Sources */,
+				75FCFAEE209F2DFA004D3BCB /* SearchTableViewDataSource.swift in Sources */,
 				75391F36209E581300DD83CF /* DetailViewController.swift in Sources */,
 				75FCFAD6209EF781004D3BCB /* StepikSearchService.swift in Sources */,
+				75FCFAEC209F2C60004D3BCB /* UIViewController+SmartDeselection.swift in Sources */,
 				75FCFAE3209F09C2004D3BCB /* StepikUrlBuilder.swift in Sources */,
 				75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */,
 				7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */,
