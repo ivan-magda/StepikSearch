@@ -23,10 +23,6 @@ See the LICENSE file for more information.
 
 <img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPad-5th-generation-search.png"
 width="334" height="446">
-<img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPad-5th-generation-detail.png"
-width="334" height="446" hspace=50>
 
-<img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPhone-8-Plus-search.png"
-width="311" height="552">
 <img src="https://github.com/vanyaland/StepikSearch/blob/master/Screenshots/iPhone-8-Plus-search-land.png"
 width="552" height="311">
