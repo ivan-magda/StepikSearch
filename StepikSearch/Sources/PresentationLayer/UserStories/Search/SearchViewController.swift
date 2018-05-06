@@ -43,7 +43,11 @@ final class SearchViewController: UIViewController, PrimaryViewController {
     private let tableViewDataSource = SearchTableViewDataSource()
     private let tableViewDelegate = SearchTableViewDelegate()
 
-    private let searchController = UISearchController(searchResultsController: nil)
+    private lazy var searchController: UISearchController = {
+        return SearchControllerBuilder()
+            .searchResultsUpdater(searchResultsUpdater: self)
+            .build()
+    }()
 
     /// Encapsulates request code for search.
     private var pendingSearchRequestWorkItem: DispatchWorkItem?
@@ -107,14 +111,7 @@ final class SearchViewController: UIViewController, PrimaryViewController {
             strongSelf.navigationDelegate?.showCourseDetails(course, vc: strongSelf)
         }
 
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = Constants.Strings.stepik
-        searchController.searchBar.tintColor = Styles.Colors.Blue.medium.color
-        searchController.searchBar.backgroundColor = .clear
-        searchController.searchBar.searchBarStyle = .minimal
         navigationItem.searchController = searchController
-        searchController.searchBar.resignWhenKeyboardHides()
         definesPresentationContext = true
 
         NotificationCenter.default.addObserver(
