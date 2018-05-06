@@ -47,7 +47,7 @@ final class FavoriteViewController: UIViewController, PrimaryViewController {
 
     private func setup() {
         title = Constants.Strings.favorites
-        view.backgroundColor = Styles.Colors.background
+        //view.backgroundColor = Styles.Colors.background
     }
 
 }

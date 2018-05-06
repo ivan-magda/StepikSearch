@@ -38,10 +38,6 @@ struct SearchResultCellViewModel {
 
     // MARK: Public API
 
-    var cellBackgroundColor: UIColor {
-        return Styles.Colors.background
-    }
-
     var title: String {
         return course.title.capitalized
     }

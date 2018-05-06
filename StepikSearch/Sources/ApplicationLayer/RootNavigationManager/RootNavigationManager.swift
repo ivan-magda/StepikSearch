@@ -31,7 +31,7 @@ final class RootNavigationManager {
     private let splitDelegate = SplitViewControllerDelegate()
 
     // weak refs to avoid cycles
-    weak private var rootViewController: UISplitViewController?
+    weak private var splitViewController: UISplitViewController?
     weak private var detailNavigationController: UINavigationController?
 
     // MARK: Init
@@ -41,7 +41,7 @@ final class RootNavigationManager {
             fatalError("RootViewController should be UISplitViewController")
         }
 
-        self.rootViewController = rootViewController
+        self.splitViewController = rootViewController
         rootViewController.delegate = splitDelegate
         rootViewController.preferredDisplayMode = .allVisible
 
@@ -49,7 +49,6 @@ final class RootNavigationManager {
         self.tabBarController?.tabBar.unselectedItemTintColor = Styles.Colors.Gray.light.color
 
         self.detailNavigationController = rootViewController.viewControllers.last as? UINavigationController
-        detailNavigationController?.topViewController?.navigationItem.leftBarButtonItem = rootViewController.displayModeButtonItem
     }
 
     // MARK: Public API
@@ -80,7 +79,7 @@ final class RootNavigationManager {
     }
 
     private var tabBarController: TabBarController? {
-        return rootViewController?.viewControllers.first as? TabBarController
+        return splitViewController?.viewControllers.first as? TabBarController
     }
 
     private func newSearchRootViewController() -> UIViewController {

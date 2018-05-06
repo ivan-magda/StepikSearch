@@ -26,17 +26,90 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
+    // MARK: Instance Variables
+
+    private let course: Course
+
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+
+        return imageView
+    }()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+
+        return label
+    }()
+
+    private let scoreLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        label.textColor = Styles.Colors.Gray.light.color
+
+        return label
+    }()
+
+    // MARK: Init
+
+    init(course: Course) {
+        self.course = course
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: UIViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        configureView()
     }
 
     // MARK: Private API
 
-    private func setup() {
-        title = Constants.Strings.detail
+    private func configureView() {
+        edgesForExtendedLayout = []
+
+        title = course.title
+        view.backgroundColor = Styles.Colors.background
+
+        hideLargeTitle()
+        addSubviews()
+    }
+
+    private func addSubviews() {
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: Styles.Sizes.cellSpacing),
+            imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35)
+        ])
+        imageView.sd_setImage(with: URL(string: course.coverUrl), completed: nil)
+
+        view.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Styles.Sizes.cellSpacing),
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Styles.Sizes.cellSpacing),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Styles.Sizes.cellSpacing)
+        ])
+        titleLabel.text = course.title
+
+        view.addSubview(scoreLabel)
+        NSLayoutConstraint.activate([
+            scoreLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Styles.Sizes.cellSpacing),
+            scoreLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Styles.Sizes.cellSpacing),
+            scoreLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Styles.Sizes.cellSpacing)
+        ])
+        scoreLabel.text = NSLocalizedString("Score:", comment: "") + " \(course.score)"
     }
 
 }

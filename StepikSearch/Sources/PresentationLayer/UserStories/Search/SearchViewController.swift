@@ -33,7 +33,6 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
-        tableView.backgroundColor = Styles.Colors.background
         tableView.alwaysBounceVertical = true
 
         return tableView
@@ -91,7 +90,6 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     private func setup() {
         title = Constants.Strings.search
-        view.backgroundColor = Styles.Colors.background
 
         view.addSubview(tableView)
         tableView.dataSource = tableViewDataSource
@@ -100,6 +98,9 @@ final class SearchViewController: UIViewController, PrimaryViewController {
             BasicTableViewCell.nib,
             forCellReuseIdentifier: BasicTableViewCell.identifier
         )
+        tableViewDelegate.didSelect = { [weak self] course in
+            self?.showDetail(course)
+        }
 
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -133,6 +134,12 @@ final class SearchViewController: UIViewController, PrimaryViewController {
             IndexSet(integer: tableViewDataSource.numberOfSections(in: tableView) - 1),
             with: .automatic
         )
+    }
+
+    private func showDetail(_ course: Course) {
+        let detail = DetailViewController(course: course)
+        let navigation = UINavigationController(rootViewController: detail)
+        showDetailViewController(navigation, sender: nil)
     }
 
 }

@@ -29,8 +29,9 @@ final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
 
     // MARK: Instance variables
 
-    private var data = [Course]()
+    var didSelect: (Course) -> Swift.Void = { _ in }
 
+    private var data = [Course]()
     private var viewModel: SearchResultCellViewModel!
 
     // MARK: Public API
@@ -51,7 +52,6 @@ final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
         let course = data[indexPath.row]
         viewModel.setCourse(course)
 
-        cell.backgroundColor = viewModel.cellBackgroundColor
         cell.titleLabel?.text = viewModel.title
         cell._imageView?.sd_setImage(
             with: URL(string: course.coverUrl),
@@ -59,6 +59,10 @@ final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
             options: [.cacheMemoryOnly, .retryFailed],
             completed: nil
         )
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelect(data[indexPath.row])
     }
 
 }
