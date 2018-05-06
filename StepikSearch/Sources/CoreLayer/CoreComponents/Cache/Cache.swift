@@ -94,7 +94,7 @@ final class Cache {
     }
 
     /// Load cached data from the directory.
-    public func load<T: Cachable & Codable>(fileName: String) -> T? {
+    public func load<T: Codable>(fileName: String) -> T? {
         guard
             let data = try? Data(contentsOf: destination.appendingPathComponent(fileName, isDirectory: false)),
             let decoded = try? JSONDecoder().decode(T.self, from: data)

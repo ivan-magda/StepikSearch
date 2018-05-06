@@ -31,6 +31,8 @@ final class SearchViewController: UIViewController, PrimaryViewController {
     let stepikSearchService: StepikSearchService
     let stepikTemporaryCache: StepikSearchResultsTemporaryCache
 
+    weak var navigationDelegate: NavigationDelegate?
+
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.alwaysBounceVertical = true
@@ -50,10 +52,12 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     init(
         stepikSearchService: StepikSearchService,
-        stepikTemporaryCache: StepikSearchResultsTemporaryCache
+        stepikTemporaryCache: StepikSearchResultsTemporaryCache,
+        navigationDelegate: NavigationDelegate?
         ) {
         self.stepikSearchService = stepikSearchService
         self.stepikTemporaryCache = stepikTemporaryCache
+        self.navigationDelegate = navigationDelegate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -99,7 +103,8 @@ final class SearchViewController: UIViewController, PrimaryViewController {
             forCellReuseIdentifier: BasicTableViewCell.identifier
         )
         tableViewDelegate.didSelect = { [weak self] course in
-            self?.showDetail(course)
+            guard let strongSelf = self else { return }
+            strongSelf.navigationDelegate?.showDetailViewController(onto: strongSelf, course: course)
         }
 
         searchController.searchResultsUpdater = self
@@ -134,12 +139,6 @@ final class SearchViewController: UIViewController, PrimaryViewController {
             IndexSet(integer: tableViewDataSource.numberOfSections(in: tableView) - 1),
             with: .automatic
         )
-    }
-
-    private func showDetail(_ course: Course) {
-        let detail = DetailViewController(course: course)
-        let navigation = UINavigationController(rootViewController: detail)
-        showDetailViewController(navigation, sender: nil)
     }
 
 }

@@ -22,24 +22,28 @@
 
 import Foundation
 
-// MARK: Course: Codable
+func uniq<S : Sequence, T : Hashable>(source: S) -> [T] where S.Iterator.Element == T {
+    var buffer = [T]()
+    var added = Set<T>()
 
-struct Course: Codable, Hashable {
-
-    let id: Int
-    let score: Double
-    let title: String
-    let coverUrl: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case score
-        case title = "course_title"
-        case coverUrl = "course_cover"
+    for elem in source {
+        if !added.contains(elem) {
+            buffer.append(elem)
+            added.insert(elem)
+        }
     }
 
-    var hashValue: Int {
-        return id
-    }
+    return buffer
+}
 
+extension Array where Element: Equatable {
+    mutating func removeDuplicates() {
+        var result = [Element]()
+        for value in self {
+            if !result.contains(value) {
+                result.append(value)
+            }
+        }
+        self = result
+    }
 }

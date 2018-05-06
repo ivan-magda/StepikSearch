@@ -29,6 +29,7 @@ final class DetailViewController: UIViewController {
     // MARK: Instance Variables
 
     private let course: Course
+    private let cache: StepikFavoritesCache
 
     private let imageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -58,8 +59,9 @@ final class DetailViewController: UIViewController {
 
     // MARK: Init
 
-    init(course: Course) {
+    init(course: Course, cache: StepikFavoritesCache) {
         self.course = course
+        self.cache = cache
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -84,7 +86,21 @@ final class DetailViewController: UIViewController {
 
         hideLargeTitle()
         addSubviews()
+        addRightBarButtonItem()
     }
+
+    // MARK: Actions
+
+    @objc
+    private func addToFavorites() {
+        cache.persist(course) { _, _ in }
+    }
+
+}
+
+// MARK: - DetailViewController (Configure UI) -
+
+extension DetailViewController {
 
     private func addSubviews() {
         view.addSubview(imageView)
@@ -92,7 +108,7 @@ final class DetailViewController: UIViewController {
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: Styles.Sizes.cellSpacing),
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
             imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35)
-        ])
+            ])
         imageView.sd_setImage(with: URL(string: course.coverUrl), completed: nil)
 
         view.addSubview(titleLabel)
@@ -100,7 +116,7 @@ final class DetailViewController: UIViewController {
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Styles.Sizes.cellSpacing),
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Styles.Sizes.cellSpacing),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Styles.Sizes.cellSpacing)
-        ])
+            ])
         titleLabel.text = course.title
 
         view.addSubview(scoreLabel)
@@ -108,8 +124,16 @@ final class DetailViewController: UIViewController {
             scoreLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Styles.Sizes.cellSpacing),
             scoreLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Styles.Sizes.cellSpacing),
             scoreLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: Styles.Sizes.cellSpacing)
-        ])
+            ])
         scoreLabel.text = NSLocalizedString("Score:", comment: "") + " \(course.score)"
+    }
+
+    private func addRightBarButtonItem() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(
+            barButtonSystemItem: .bookmarks,
+            target: self,
+            action: #selector(addToFavorites)
+        )
     }
 
 }

@@ -24,7 +24,7 @@
 		75391F2A209E52CB00DD83CF /* UINavigationController+LargeTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F29209E52CB00DD83CF /* UINavigationController+LargeTitles.swift */; };
 		75391F2D209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F2C209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift */; };
 		75391F30209E54CE00DD83CF /* UISearchController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F2F209E54CE00DD83CF /* UISearchController+SearchBar.swift */; };
-		75391F33209E56C000DD83CF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F32209E56C000DD83CF /* FavoriteViewController.swift */; };
+		75391F33209E56C000DD83CF /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F32209E56C000DD83CF /* FavoritesViewController.swift */; };
 		75391F36209E581300DD83CF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F35209E581300DD83CF /* DetailViewController.swift */; };
 		75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */; };
 		75D4D842209F620200EBBB8C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FCFB00209F5923004D3BCB /* SDWebImage.framework */; };
@@ -32,6 +32,12 @@
 		75D4D847209F62F700EBBB8C /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D845209F62F700EBBB8C /* BasicTableViewCell.swift */; };
 		75D4D848209F62F700EBBB8C /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D4D846209F62F700EBBB8C /* BasicTableViewCell.xib */; };
 		75D4D84C209F65B900EBBB8C /* UITableViewCell+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D84B209F65B900EBBB8C /* UITableViewCell+ReusableCell.swift */; };
+		75D4D84E209F7A1B00EBBB8C /* StepikFavoritesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D84D209F7A1B00EBBB8C /* StepikFavoritesCache.swift */; };
+		75D4D852209F7B1800EBBB8C /* StepikFavoritesCacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D851209F7B1800EBBB8C /* StepikFavoritesCacheImplementation.swift */; };
+		75D4D856209F7C0300EBBB8C /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D855209F7C0300EBBB8C /* Sequence+Unique.swift */; };
+		75D4D858209F856F00EBBB8C /* FavoritesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D857209F856F00EBBB8C /* FavoritesTableViewDataSource.swift */; };
+		75D4D85A209F858000EBBB8C /* FavoritesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */; };
+		75D4D85D209F86F500EBBB8C /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */; };
 		75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */; };
 		75FCFACA209EF3E7004D3BCB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAC9209EF3E7004D3BCB /* Resource.swift */; };
 		75FCFACC209EF40A004D3BCB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFACB209EF40A004D3BCB /* Result.swift */; };
@@ -52,7 +58,7 @@
 		75FCFAF5209F3C93004D3BCB /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAF4209F3C93004D3BCB /* Cachable.swift */; };
 		75FCFAF9209F401B004D3BCB /* StepikTemporaryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */; };
 		75FCFAFB209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */; };
-		75FCFAFE209F4EAE004D3BCB /* SearchResultCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAFD209F4EAD004D3BCB /* SearchResultCellViewModel.swift */; };
+		75FCFAFE209F4EAE004D3BCB /* BasicTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFAFD209F4EAD004D3BCB /* BasicTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,13 +106,19 @@
 		75391F29209E52CB00DD83CF /* UINavigationController+LargeTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+LargeTitles.swift"; sourceTree = "<group>"; };
 		75391F2C209E52FE00DD83CF /* UIViewController+LargeTitleHidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LargeTitleHidable.swift"; sourceTree = "<group>"; };
 		75391F2F209E54CE00DD83CF /* UISearchController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchController+SearchBar.swift"; sourceTree = "<group>"; };
-		75391F32209E56C000DD83CF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		75391F32209E56C000DD83CF /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		75391F35209E581300DD83CF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		75391F3A209E77C800DD83CF /* SplitPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitPlaceholderViewController.swift; sourceTree = "<group>"; };
 		75D4D843209F625F00EBBB8C /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		75D4D845209F62F700EBBB8C /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		75D4D846209F62F700EBBB8C /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		75D4D84B209F65B900EBBB8C /* UITableViewCell+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableCell.swift"; sourceTree = "<group>"; };
+		75D4D84D209F7A1B00EBBB8C /* StepikFavoritesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikFavoritesCache.swift; sourceTree = "<group>"; };
+		75D4D851209F7B1800EBBB8C /* StepikFavoritesCacheImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikFavoritesCacheImplementation.swift; sourceTree = "<group>"; };
+		75D4D855209F7C0300EBBB8C /* Sequence+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Unique.swift"; sourceTree = "<group>"; };
+		75D4D857209F856F00EBBB8C /* FavoritesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDataSource.swift; sourceTree = "<group>"; };
+		75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewDelegate.swift; sourceTree = "<group>"; };
+		75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		75FCFAC2209EEB42004D3BCB /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
 		75FCFAC9209EF3E7004D3BCB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		75FCFACB209EF40A004D3BCB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -127,7 +139,7 @@
 		75FCFAF4209F3C93004D3BCB /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
 		75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTemporaryCache.swift; sourceTree = "<group>"; };
 		75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikSearchResultsTemporaryCache.swift; sourceTree = "<group>"; };
-		75FCFAFD209F4EAD004D3BCB /* SearchResultCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellViewModel.swift; sourceTree = "<group>"; };
+		75FCFAFD209F4EAD004D3BCB /* BasicTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		75FCFB00209F5923004D3BCB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +265,7 @@
 				75391F13209E1E4700DD83CF /* ViewControllers */,
 				75391F16209E1F6200DD83CF /* Views */,
 				7537BA53209C710400FEFDFE /* UserStories */,
+				75D4D85B209F86DC00EBBB8C /* Common */,
 				7537BA30209C6CF200FEFDFE /* Main.storyboard */,
 				7537BA35209C6CF400FEFDFE /* LaunchScreen.storyboard */,
 			);
@@ -335,7 +348,6 @@
 		75391F21209E38D700DD83CF /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				75FCFAFC209F4E8E004D3BCB /* ViewModels */,
 				75391F22209E390B00DD83CF /* SearchViewController.swift */,
 				75FCFAED209F2DFA004D3BCB /* SearchTableViewDataSource.swift */,
 				75FCFAEF209F2E16004D3BCB /* SearchTableViewDelegate.swift */,
@@ -379,7 +391,9 @@
 		75391F31209E56AA00DD83CF /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				75391F32209E56C000DD83CF /* FavoriteViewController.swift */,
+				75391F32209E56C000DD83CF /* FavoritesViewController.swift */,
+				75D4D857209F856F00EBBB8C /* FavoritesTableViewDataSource.swift */,
+				75D4D859209F858000EBBB8C /* FavoritesTableViewDelegate.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -395,6 +409,7 @@
 		75D4D849209F62FD00EBBB8C /* BasicTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				75FCFAFD209F4EAD004D3BCB /* BasicTableViewCellViewModel.swift */,
 				75D4D845209F62F700EBBB8C /* BasicTableViewCell.swift */,
 				75D4D846209F62F700EBBB8C /* BasicTableViewCell.xib */,
 			);
@@ -407,6 +422,48 @@
 				75D4D84B209F65B900EBBB8C /* UITableViewCell+ReusableCell.swift */,
 			);
 			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		75D4D84F209F7A9600EBBB8C /* Temporary */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */,
+				75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */,
+			);
+			path = Temporary;
+			sourceTree = "<group>";
+		};
+		75D4D850209F7AA400EBBB8C /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				75D4D84D209F7A1B00EBBB8C /* StepikFavoritesCache.swift */,
+				75D4D851209F7B1800EBBB8C /* StepikFavoritesCacheImplementation.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		75D4D853209F7BEC00EBBB8C /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				75FCFAD0209EF49D004D3BCB /* GCD.swift */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		75D4D854209F7BF700EBBB8C /* Sequence */ = {
+			isa = PBXGroup;
+			children = (
+				75D4D855209F7C0300EBBB8C /* Sequence+Unique.swift */,
+			);
+			path = Sequence;
+			sourceTree = "<group>";
+		};
+		75D4D85B209F86DC00EBBB8C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				75D4D85C209F86F500EBBB8C /* NavigationDelegate.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		75FCFABE209EEA95004D3BCB /* BusinessLogicLayer */ = {
@@ -489,7 +546,8 @@
 		75FCFACF209EF465004D3BCB /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				75FCFAD0209EF49D004D3BCB /* GCD.swift */,
+				75D4D854209F7BF700EBBB8C /* Sequence */,
+				75D4D853209F7BEC00EBBB8C /* GCD */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -584,18 +642,10 @@
 		75FCFAF7209F3FD5004D3BCB /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				75FCFAF8209F401B004D3BCB /* StepikTemporaryCache.swift */,
-				75FCFAFA209F4121004D3BCB /* StepikSearchResultsTemporaryCache.swift */,
+				75D4D850209F7AA400EBBB8C /* Favorites */,
+				75D4D84F209F7A9600EBBB8C /* Temporary */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		75FCFAFC209F4E8E004D3BCB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				75FCFAFD209F4EAD004D3BCB /* SearchResultCellViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		75FCFAFF209F5923004D3BCB /* Frameworks */ = {
@@ -767,6 +817,7 @@
 				75FCFAF3209F3A6A004D3BCB /* Cache.swift in Sources */,
 				75FCFACC209EF40A004D3BCB /* Result.swift in Sources */,
 				75391F15209E1E5D00DD83CF /* SplitViewControllerDelegate.swift in Sources */,
+				75D4D856209F7C0300EBBB8C /* Sequence+Unique.swift in Sources */,
 				75FCFAC3209EEB42004D3BCB /* ApplicationConfigurator.swift in Sources */,
 				75391F0D209E1B6800DD83CF /* AppSplitViewController.swift in Sources */,
 				75391F23209E390B00DD83CF /* SearchViewController.swift in Sources */,
@@ -778,23 +829,28 @@
 				75FCFAF0209F2E16004D3BCB /* SearchTableViewDelegate.swift in Sources */,
 				75391F30209E54CE00DD83CF /* UISearchController+SearchBar.swift in Sources */,
 				75391F26209E4D4300DD83CF /* UISearchBar+Keyboard.swift in Sources */,
+				75D4D84E209F7A1B00EBBB8C /* StepikFavoritesCache.swift in Sources */,
 				75FCFACA209EF3E7004D3BCB /* Resource.swift in Sources */,
 				75391F12209E1CD300DD83CF /* RootNavigationManager.swift in Sources */,
+				75D4D85A209F858000EBBB8C /* FavoritesTableViewDelegate.swift in Sources */,
 				75391F18209E1F7600DD83CF /* Styles.swift in Sources */,
-				75391F33209E56C000DD83CF /* FavoriteViewController.swift in Sources */,
+				75391F33209E56C000DD83CF /* FavoritesViewController.swift in Sources */,
 				75FCFAE5209F0ADF004D3BCB /* UrlBuilder.swift in Sources */,
 				75391F0F209E1B8700DD83CF /* TabBarControllerr.swift in Sources */,
 				75FCFAEE209F2DFA004D3BCB /* SearchTableViewDataSource.swift in Sources */,
 				75391F36209E581300DD83CF /* DetailViewController.swift in Sources */,
+				75D4D85D209F86F500EBBB8C /* NavigationDelegate.swift in Sources */,
 				75FCFAD6209EF781004D3BCB /* StepikSearchService.swift in Sources */,
+				75D4D852209F7B1800EBBB8C /* StepikFavoritesCacheImplementation.swift in Sources */,
 				75FCFAEC209F2C60004D3BCB /* UIViewController+SmartDeselection.swift in Sources */,
 				75FCFAE3209F09C2004D3BCB /* StepikUrlBuilder.swift in Sources */,
 				75391F3B209E77C800DD83CF /* SplitPlaceholderViewController.swift in Sources */,
 				7537BA2D209C6CF200FEFDFE /* AppDelegate.swift in Sources */,
 				75D4D847209F62F700EBBB8C /* BasicTableViewCell.swift in Sources */,
-				75FCFAFE209F4EAE004D3BCB /* SearchResultCellViewModel.swift in Sources */,
+				75FCFAFE209F4EAE004D3BCB /* BasicTableViewCellViewModel.swift in Sources */,
 				75FCFAEA209F1C7E004D3BCB /* StepikResponseMapper.swift in Sources */,
 				75FCFACE209EF42D004D3BCB /* Webservice.swift in Sources */,
+				75D4D858209F856F00EBBB8C /* FavoritesTableViewDataSource.swift in Sources */,
 				75391F1C209E228900DD83CF /* Constants.swift in Sources */,
 				75FCFAE7209F0D2C004D3BCB /* StepikResources.swift in Sources */,
 			);

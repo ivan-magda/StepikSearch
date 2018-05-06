@@ -20,26 +20,32 @@
  * THE SOFTWARE.
  */
 
-import Foundation
+import UIKit
 
-// MARK: Course: Codable
+final class FavoritesTableViewDataSource: NSObject, UITableViewDataSource {
 
-struct Course: Codable, Hashable {
+    // MARK: Instance variables
 
-    let id: Int
-    let score: Double
-    let title: String
-    let coverUrl: String
+    private var data = [Course]()
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case score
-        case title = "course_title"
-        case coverUrl = "course_cover"
+    // MARK: Public API
+
+    func onDataChanged(_ data: [Course]) {
+        self.data = data
     }
 
-    var hashValue: Int {
-        return id
+    // MARK: UITableViewDataSource
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: BasicTableViewCell.identifier)!
     }
 
 }

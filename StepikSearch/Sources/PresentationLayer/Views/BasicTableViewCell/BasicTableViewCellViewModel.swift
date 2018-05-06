@@ -20,26 +20,30 @@
  * THE SOFTWARE.
  */
 
-import Foundation
+import UIKit
 
-// MARK: Course: Codable
+// MARK: SearchResultCellViewModel
 
-struct Course: Codable, Hashable {
+struct BasicTableViewCellViewModel {
 
-    let id: Int
-    let score: Double
-    let title: String
-    let coverUrl: String
+    // MARK: Instance Variables
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case score
-        case title = "course_title"
-        case coverUrl = "course_cover"
+    private var course: Course
+
+    // MARK: Init
+
+    init(course: Course) {
+        self.course = course
     }
 
-    var hashValue: Int {
-        return id
+    // MARK: Public API
+
+    var title: String {
+        return course.title.capitalized
+    }
+
+    mutating func setCourse(_ course: Course) {
+        self.course = course
     }
 
 }

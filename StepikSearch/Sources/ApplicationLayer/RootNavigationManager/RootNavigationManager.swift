@@ -34,6 +34,8 @@ final class RootNavigationManager {
     weak private var splitViewController: UISplitViewController?
     weak private var detailNavigationController: UINavigationController?
 
+    private let stepikFavoritesCache = StepikFavoritesCacheImplementation()
+
     // MARK: Init
 
     init(with window: UIWindow?) {
@@ -85,7 +87,8 @@ final class RootNavigationManager {
     private func newSearchRootViewController() -> UIViewController {
         let controller = SearchViewController(
             stepikSearchService: StepikSearchServiceImplementation(),
-            stepikTemporaryCache: StepikSearchResultsTemporaryCache()
+            stepikTemporaryCache: StepikSearchResultsTemporaryCache(),
+            navigationDelegate: self
         )
         
         let nav = UINavigationController(rootViewController: controller)
@@ -99,7 +102,7 @@ final class RootNavigationManager {
     }
 
     private func newFavoriteRootViewController() -> UIViewController {
-        let controller = FavoriteViewController()
+        let controller = FavoritesViewController(navigationDelegate: self)
 
         let nav = UINavigationController(rootViewController: controller)
         nav.navigationBar.prefersLargeTitles = true
@@ -111,4 +114,16 @@ final class RootNavigationManager {
         return nav
     }
     
+}
+
+// MARK: - RootNavigationManager (NavigationDelegate) -
+
+extension RootNavigationManager: NavigationDelegate {
+
+    func showDetailViewController(onto vc: UIViewController, course: Course) {
+        let detail = DetailViewController(course: course, cache: stepikFavoritesCache)
+        let navigation = UINavigationController(rootViewController: detail)
+        vc.showDetailViewController(navigation, sender: nil)
+    }
+
 }

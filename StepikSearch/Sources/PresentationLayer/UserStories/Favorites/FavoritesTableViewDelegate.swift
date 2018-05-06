@@ -23,9 +23,7 @@
 import UIKit
 import SDWebImage
 
-// MARK: SearchTableViewDelegate: NSObject, UITableViewDelegate
-
-final class SearchTableViewDelegate: NSObject, UITableViewDelegate {
+final class FavoritesTableViewDelegate: NSObject, UITableViewDelegate {
 
     // MARK: Instance variables
 

@@ -22,9 +22,11 @@
 
 import UIKit
 
-// MARK: FavoriteViewController: UIViewController
+// MARK: FavoritesViewController: UIViewController
 
 final class FavoritesViewController: UIViewController, PrimaryViewController {
+
+    // MARK: Instance Variables
 
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -32,10 +34,16 @@ final class FavoritesViewController: UIViewController, PrimaryViewController {
 
         return tableView
     }()
-    
+
+    private let tableViewDataSource = FavoritesTableViewDataSource()
+    private let tableViewDelegate = FavoritesTableViewDelegate()
+
+    weak var navigationDelegate: NavigationDelegate?
+
     // MARK: Init
 
-    init() {
+    init(navigationDelegate: NavigationDelegate?) {
+        self.navigationDelegate = navigationDelegate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -50,6 +58,20 @@ final class FavoritesViewController: UIViewController, PrimaryViewController {
         setup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        rz_smoothlyDeselectRows(tableView: tableView)
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        let bounds = view.bounds
+        if bounds != tableView.frame {
+            tableView.frame = bounds
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -59,20 +81,43 @@ final class FavoritesViewController: UIViewController, PrimaryViewController {
     private func setup() {
         title = Constants.Strings.favorites
 
+        view.addSubview(tableView)
+        tableView.dataSource = tableViewDataSource
+        tableView.delegate = tableViewDelegate
+        tableView.register(
+            BasicTableViewCell.nib,
+            forCellReuseIdentifier: BasicTableViewCell.identifier
+        )
+        tableViewDelegate.didSelect = { [weak self] course in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationDelegate?.showDetailViewController(onto: strongSelf, course: course)
+        }
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleChangeNotification(_:)),
             name: StepikFavoritesCacheImplementation.changedNotification,
             object: nil
         )
+
+        let courses = StepikFavoritesCacheImplementation().load()
+        reloadData(courses)
     }
 
     @objc
     private func handleChangeNotification(_ notification: Notification) {
         onMain {
-            print("Notification courses")
-            print(notification.object as? [Course] ?? [])
+            self.reloadData(notification.object as? [Course] ?? [])
         }
+    }
+
+    private func reloadData(_ data: [Course]) {
+        tableViewDataSource.onDataChanged(data)
+        tableViewDelegate.onDataChanged(data)
+        tableView.reloadSections(
+            IndexSet(integer: tableViewDataSource.numberOfSections(in: tableView) - 1),
+            with: .automatic
+        )
     }
 
 }

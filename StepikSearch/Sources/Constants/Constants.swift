@@ -59,7 +59,10 @@ enum Constants {
 
         enum Cache {
             static let searchResults = "search-results"
+            static let favoritesFolder = "favorites"
+            static let favoriteCourses = "courses"
         }
+
     }
 
 }

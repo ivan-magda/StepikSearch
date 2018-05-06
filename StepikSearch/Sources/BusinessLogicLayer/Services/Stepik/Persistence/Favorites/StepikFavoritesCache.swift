@@ -20,30 +20,14 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: SearchResultCellViewModel
+protocol StepikFavoritesCache {
 
-struct SearchResultCellViewModel {
+    var fileName: String { get }
 
-    // MARK: Instance Variables
+    func persist(_ course: Course, completion: @escaping CachePersistenceBlock)
 
-    private var course: Course
-
-    // MARK: Init
-
-    init(course: Course) {
-        self.course = course
-    }
-
-    // MARK: Public API
-
-    var title: String {
-        return course.title.capitalized
-    }
-
-    mutating func setCourse(_ course: Course) {
-        self.course = course
-    }
-
+    func load() -> [Course]
+    
 }

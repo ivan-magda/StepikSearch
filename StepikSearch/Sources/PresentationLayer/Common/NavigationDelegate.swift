@@ -20,26 +20,10 @@
  * THE SOFTWARE.
  */
 
-import Foundation
+import UIKit
 
-// MARK: Course: Codable
+protocol NavigationDelegate: class {
 
-struct Course: Codable, Hashable {
-
-    let id: Int
-    let score: Double
-    let title: String
-    let coverUrl: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case score
-        case title = "course_title"
-        case coverUrl = "course_cover"
-    }
-
-    var hashValue: Int {
-        return id
-    }
+    func showDetailViewController(onto vc: UIViewController, course: Course)
 
 }
