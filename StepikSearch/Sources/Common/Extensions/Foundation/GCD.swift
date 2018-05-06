@@ -25,3 +25,10 @@ import Foundation
 public func onMain(_ block: @escaping () -> Swift.Void) {
     DispatchQueue.main.async(execute: block)
 }
+
+public func after(_ time: DispatchTimeInterval, _ block: @escaping () -> Swift.Void) {
+    DispatchQueue.main.asyncAfter(
+        deadline: .now() + time,
+        execute: block
+    )
+}

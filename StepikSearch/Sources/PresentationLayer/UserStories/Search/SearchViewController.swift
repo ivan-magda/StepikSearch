@@ -43,6 +43,9 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 
     private let searchController = UISearchController(searchResultsController: nil)
 
+    /// Encapsulates request code for search.
+    private var pendingSearchRequestWorkItem: DispatchWorkItem?
+
     // MARK: Init
 
     init(stepikSearchService: StepikSearchService) {
@@ -103,13 +106,23 @@ final class SearchViewController: UIViewController, PrimaryViewController {
 extension SearchViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
-        guard let query = searchController.searchBar.text,
-            !searchController.isEmpty() else { return }
-        stepikSearchService.search(for: query) { result in
-            if let value = result.value {
-                print(value[0])
+        pendingSearchRequestWorkItem?.cancel()
+
+        let requestWorkItem = DispatchWorkItem { [weak self] in
+            guard let query = searchController.searchBar.text,
+                !searchController.isEmpty() else { return }
+            self?.stepikSearchService.search(for: query) { result in
+                if let value = result.value {
+                    print(value[0])
+                }
             }
         }
+
+        pendingSearchRequestWorkItem = requestWorkItem
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + .milliseconds(750),
+            execute: requestWorkItem
+        )
     }
 
 }
